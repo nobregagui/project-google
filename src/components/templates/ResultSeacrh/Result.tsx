@@ -35,8 +35,10 @@ const Results = () => {
 
   useEffect(() => {
     setDataSearch(
-      data.filter((item) =>
-        item.title.toLowerCase().includes(query.toLowerCase())
+      data.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query.toLowerCase()) ||
+          item.type.toLowerCase().includes(query.toLowerCase())
       )
     );
   }, [query, setDataSearch]);
