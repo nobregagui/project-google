@@ -1,15 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import { DataProvider } from "./context/DataContext";
+import App from "./App";
 
-import './index.css'
+import "./index.css";
 
 const AppContainer = () => {
   return (
     <React.StrictMode>
-      <App />
+      <DataProvider>
+        <App />
+      </DataProvider>
     </React.StrictMode>
-  )
-}
+  );
+};
 
-ReactDOM.render(<AppContainer />, document.getElementById('szb-app-root'))
+ReactDOM.render(<AppContainer />, document.getElementById("szb-app-root"));

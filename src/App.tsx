@@ -1,22 +1,17 @@
-import React from 'react'
-import logo from './logo.svg'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/templates/Home";
+import Results from "./components/templates/ResultSeacrh/Result";
 
-import { Container, Header, Logo } from './styles'
-
-function App() {
+const App = () => {
   return (
-    <Container>
-      <Header>
-        <Logo src={logo} alt="Sizebay logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a href="https://sizebay.com" target="_blank" rel="noopener noreferrer">
-          Learn about Sizebay
-        </a>
-      </Header>
-    </Container>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/results" element={<Results />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
